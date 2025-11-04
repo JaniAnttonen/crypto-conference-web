@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background: #040d1f;
+  --color-background-alt: #061126;
+  --color-foreground: #60F2FF;
+}
+
+/* View Transition Styles */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+::view-transition-old(root) {
+  animation-name: slide-out-right;
+}
+
+::view-transition-new(root) {
+  animation-name: slide-in-left;
+}
+
+/* Preserve marquee animation during transitions */
+::view-transition-old(marquee-logo),
+::view-transition-new(marquee-logo) {
+  animation: none;
+  transform: none;
+}
+
+@keyframes slide-out-right {
+  to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}

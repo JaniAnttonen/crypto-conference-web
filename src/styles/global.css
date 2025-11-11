@@ -4,6 +4,9 @@
   --color-background: #040d1f;
   --color-background-alt: #061126;
   --color-foreground: #60F2FF;
+
+  --background-image-tiled: url('/tile.png');
+  --background-image-tiled-dark: url('/tiledark.png');
 }
 
 /* View Transition Styles */
